@@ -2,13 +2,17 @@ from django.test import TestCase
 from search.models.category import Categories
 from search.models.product import Product
 from search.models.substitute import Substitute
+from django.contrib.auth.models import User
 
 
 class CategoryTest(TestCase):
 
+    def setUp(self):
+        self.cat = Categories.objects.create(name="Snack")
+
     def test_category_str(self):
-        cat = Categories.objects.create(name="Snack")
-        self.assertEqual(str(cat), "Snack")
+        self.cat.objects.get(name="Snack")
+        self.assertEqual(str(self.cat), "Snack")
 
 
 class ProductTest(TestCase):
@@ -29,4 +33,16 @@ class ProductTest(TestCase):
             salt_100g=0.1,
         )
         self.assertEqual(str(product), "Prince" "d")
-        
+
+
+class SubstituteTest(TestCase):
+
+    def setUp(self):
+        self.prd = Product.objects.create(name="Prince", barcode="7622210449283", nutrition_score="D")
+        self.substitute = Product.objects.create(name="Biscuit sésame", barcode="3175680011480", nutrition_score="C")
+        self.user = User.objects.create(username='jacob', email='jacob@hotmail.fr', password="oiseau21")
+        self.favorite = Substitute.objects.create(product_id=self.prd, substitute_id=self.substitute, user_id=self.user)
+
+    def test_favorite_str(self):
+        self.assertEqual(str(self.favorite), f"Produit: {Substitute.product_id}, Substitut: {Substitute.substitute_id}"
+                                             f", User: {Substitute.user_id}")

@@ -73,6 +73,8 @@ mocked_product_full = {
                 "salt_100g": 0.1,
             },
         }
+
+
 class Testopenfoodfact(TestCase):
 
     @patch("requests.get", return_value=MockResponse())
@@ -88,7 +90,7 @@ class Testopenfoodfact(TestCase):
             "product_name_fr": "Prince",
             "code": "7622210449283",
             "brands": "Lu, Prince, Mondelez",
-            "nutriscore_grade": "",
+            "nutriscore_grade": "D",
             "url": "https://fr.openfoodfacts.org/produit/7622210449283/prince-lu",
             "image_url": "https://static.openfoodfacts.org/images/products/762/221/044/9283/front_fr.415.400.jpg",
             "image_small_url": "https://static.openfoodfacts.org/images/products/762/221/044/9283/front_fr.415.200.jpg",
