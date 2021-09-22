@@ -32,7 +32,7 @@ class ProductTest(TestCase):
             fat_100g=1.6,
             salt_100g=0.1,
         )
-        self.assertEqual(str(product), "Prince" "d")
+        self.assertEqual(str(product), "Prince, d")
 
 
 class SubstituteTest(TestCase):
