@@ -56,3 +56,6 @@ class Openfoodfact:
                 full_product.append(product)
 
         return full_product
+
+
+Openfoodfact()
