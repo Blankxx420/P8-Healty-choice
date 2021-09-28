@@ -4,8 +4,8 @@ from .category import Categories
 
 class Product(models.Model):
     barcode = models.CharField(max_length=13, unique=True)
-    name = models.CharField(max_length=45, unique=True)
-    brands = models.CharField(max_length=45)
+    name = models.CharField(max_length=150, unique=True)
+    brands = models.CharField(max_length=150)
     url = models.URLField()
     url_image = models.URLField()
     url_image_small = models.URLField()

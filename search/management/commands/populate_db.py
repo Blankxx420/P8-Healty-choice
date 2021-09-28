@@ -48,7 +48,6 @@ class Command(BaseCommand):
                 ]
 
                 nutriments_dict = {}
-
                 for nutriment in nutriments_list:
                     nutriment_value = product.get("nutriments").get(nutriment)
                     if isinstance(nutriment_value, float) is True:
@@ -62,9 +61,9 @@ class Command(BaseCommand):
                     brands=brands,
                     barcode=barcode,
                     url=url,
-                    image_url="image_url",
-                    image_small_url=image_small_url,
-                    nutriscore=nutriscore,
+                    url_image=image_url,
+                    url_image_small=image_small_url,
+                    nutrition_score=nutriscore,
                     energy_100g=nutriments_dict.get("energy_100g"),
                     sugars_100g=nutriments_dict.get("sugars_100g"),
                     sodium_100g=nutriments_dict.get("sodium_100g"),
