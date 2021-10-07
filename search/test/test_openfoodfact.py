@@ -15,7 +15,7 @@ class MockResponse:
                     "product_name_fr": "Prince",
                     "code": "7622210449283",
                     "brands": "Lu, Prince, Mondelez",
-                    "nutriscore_grade": "",
+                    "nutriscore_grade": " ",
                     "url": "https://fr.openfoodfacts.org/produit/7622210449283/prince-lu",
                     "image_url": "https://static.openfoodfacts.org/images/products/762/221/044/9283/front_fr.415.400"
                                  ".jpg",

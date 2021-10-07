@@ -42,7 +42,7 @@ class Openfoodfact:
     def avoid_empty(self):
         full_product = []
         for product in self.products:
-            if (
+            if None not in (
                 product.get("product_name_fr"),
                 product.get("code"),
                 product.get("brands"),
@@ -50,12 +50,12 @@ class Openfoodfact:
                 product.get("url"),
                 product.get("image_url"),
                 product.get("image_small_url"),
-                product.get("nutriments") is not None
+                product.get("nutriments")
             ):
 
                 full_product.append(product)
-
         return full_product
 
 
-Openfoodfact()
+op = Openfoodfact()
+op.avoid_empty()
