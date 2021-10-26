@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+{% extends "admin/base.html" %}
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<   /head>
+<body><
+{% block nav %}
+    <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
+            <div class="container px-4 px-lg-5">
+                <img src="{% static "dist/assets/img/image1.png"%}" width="30" height="30" class="d-inline-block align-top" alt="">
+                <a class="navbar-brand" href="#page-top">Pur Beurre</a>
+                <button class="navbar-toggler navbar-toggler-right" type="button" data-bs-toggle="collapse" data-bs-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
+                <div class="collapse navbar-collapse" id="navbarResponsive">
+                    <ul class="navbar-nav ms-auto my-2 my-lg-0">
+                        <li>
+                            <form id="nav-search">
+                                <div class="form-row">
+                                    <div class="col">
+                                        <input type="text" class="form-control-sm" placeholder="Rechercher un produit">
+                                    </div>
+                                </div>
+                            </form>
+                        </li>
+                        <li class="nav-item"><a class="nav-link" href="">About</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#services">Mon compte</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#portfolio">Mes aliments</a></li>
+                        <li class="nav-item"><a class="nav-link" href="#contact"></a></li>
+
+                    </ul>
+                </div>
+            </div>
+        </nav>
+{% endblock %}
+{% block header %}
+    <header class="masthead">
+            <div class="container px-4 px-lg-5 h-100">
+                <div class="row gx-4 gx-lg-5 h-100 align-items-center justify-content-center text-center">
+                    <div class="col-lg-8 align-self-end">
+                        <h1 class="text-white font-weight-bold">Du gras, oui, mais de qualité !</h1>
+                        <h2 class="text-white font-weight-bold">Touver un produit de substitution pour ceux que vous consommez tout les jours</h2>
+                        <hr class="divider" />
+                    </div>
+                    <div class="col-lg-8 align-self-baseline">
+
+                    </div>
+                </div>
+            </div>
+        </header>
+{% endblock header %}
+</body>
+</html>
