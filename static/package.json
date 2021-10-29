@@ -38,7 +38,8 @@
         "url": "https://github.com/StartBootstrap/startbootstrap-creative.git"
     },
     "dependencies": {
-        "bootstrap": "5.1.0"
+        "bootstrap": "5.1.0",
+        "bootstrap-icons": "^1.6.1"
     },
     "devDependencies": {
         "autoprefixer": "10.3.1",
