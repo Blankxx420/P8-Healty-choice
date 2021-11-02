@@ -7,7 +7,7 @@
     <title>Title</title>
 </head>
 <body>
-{% block nav %}
+
     <nav class="navbar navbar-expand-lg navbar-light fixed-top py-3" id="mainNav">
             <div class="container px-4 px-lg-5">
                 <img src="{% static "dist/assets/img/image1.png"%}"  style="margin-right: 1em" width="30" height="30" class="d-inline-block align-top" alt="">
@@ -19,7 +19,7 @@
                             <form id="nav-search">
                                 <div class="form-row">
                                     <div class="col">
-                                        <input type="text" class="form-control-sm" placeholder="Rechercher un produit">
+                                        <input type="text" formmethod="post" class="form-control-sm" placeholder="Rechercher un produit">
                                         <button type="button" class="btn btn-default btn-sm">
                                             <i class="bi bi-search" style="font-size:20px"></i>
                                         </button>
@@ -57,8 +57,11 @@
                         <h1 class="text-white font-weight-bold">Du gras, oui, mais de qualité !</h1>
                         <h2 class="text-white font-weight-bold">Touver un produit de substitution pour ceux que vous consommez tout les jours</h2>
                         <hr class="divider" />
-                        {{ searchbar }}
+                        <form id="main_form" action="{% url 'search/products' %}" method="post">
+                            {% csrf_token %}
+                            {{ searchbar }}
                         <input class="input-group-append btn btn-primary" type="submit" value="Rechercher">
+                        </form>
                     </div>
                     <div class="col-lg-8 align-self-baseline">
 
