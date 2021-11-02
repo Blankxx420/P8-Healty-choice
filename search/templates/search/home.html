@@ -57,7 +57,7 @@
                         <h1 class="text-white font-weight-bold">Du gras, oui, mais de qualité !</h1>
                         <h2 class="text-white font-weight-bold">Touver un produit de substitution pour ceux que vous consommez tout les jours</h2>
                         <hr class="divider" />
-                        <form id="main_form" action="{% url 'search/products' %}" method="post">
+                        <form id="main_form" action="{% url '/search/products' %}" method="post">
                             {% csrf_token %}
                             {{ searchbar }}
                         <input class="input-group-append btn btn-primary" type="submit" value="Rechercher">
