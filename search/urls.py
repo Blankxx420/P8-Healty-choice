@@ -1,8 +1,8 @@
 from django.urls import path
-from . import vien
+from . import views
 
 app_name = "search"
 urlpatterns = [
-    path('', home),
-    path("products/", products, name=products)
+    path('', views.home),
+    path("products/", views.products)
 ]
