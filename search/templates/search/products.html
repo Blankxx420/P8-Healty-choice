@@ -21,13 +21,13 @@
         <h3 class="text-center">Voici le résultat de votre recherche :</h3>
       </div>
       {% for product in products %}
+
       <div class="col-lg-4 col-md-12">
         <div class="card mx-1 my-3 shadow p-3 mb-5 bg-white rounded">
           <img
             class="card-img-top"
-            src="{{ product.image_url }}"
-            alt="image du produit"
-          />
+            src="{{ product.url_image_small }}"
+            alt="image du produit" />
           <span class="card-score-{{ product.nutriscore }}"
             >{{ product.nutriscore }}</span
           >
@@ -37,7 +37,6 @@
               <p class="card-title">{{ product.name }}</p>
             </a>
             <a
-              href="{% url 'search:substitutes' product.id %}"
               class="btn btn-primary"
               >Substituer</a
             >
