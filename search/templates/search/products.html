@@ -26,10 +26,10 @@
         <div class="card mx-1 my-3 shadow p-3 mb-5 bg-white rounded">
           <img
             class="card-img-top"
-            src="{{ product.url_image_small }}"
+            src="{{ product.url_image}}"
             alt="image du produit" />
-          <span class="card-score-{{ product.nutriscore }}"
-            >{{ product.nutriscore }}</span
+          <span class="card-score-{{ product.nutrition_score }}"
+            >{{ product.nutrition_score }}</span
           >
 
           <div class="card-body text-center">
@@ -48,12 +48,11 @@
         Désolé, nous n'avons pas trouvé de produit correspondant à votre
         recherche. Une autre recherche en tête ?
         <div class="p-3">
-          <a href="{% url 'search:home' %}" class="btn btn-primary"
-            >C'est par ici.</a
-          >
+          <a href="{% url 'search:home' %}" class="btn btn-primary">
+            C'est par ici.
+          </a>
         </div>
       </div>
-
       {% endif %}
     </div>
   </div>

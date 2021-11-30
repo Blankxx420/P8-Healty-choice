@@ -1,8 +1,8 @@
 """this file represent admin site models"""
 from django.contrib import admin
-from models.product import Product
-from models.substitute import Substitute
-from models.category import Categories
+from search.models.product import Product
+from search.models.substitute import Substitute
+from search.models.category import Categories
 
 
 admin.site.register(Product)

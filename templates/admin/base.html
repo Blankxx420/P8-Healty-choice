@@ -39,6 +39,7 @@
     {% endblock nav%}
 
         <!-- Masthead-->
+    {% block contents %}
     {% block header %}
         <header class="masthead">
             <div class="container px-4 px-lg-5 h-100">
@@ -69,7 +70,8 @@
                 </div>
             </div>
         </section>
-    {% endblock %}
+    {% endblock content-about %}
+    {% endblock contents %}
         <!-- Contact-->
     {% block contact %}
         <section class="page-section" id="contact">
@@ -159,7 +161,7 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/SimpleLightbox/2.1.0/simpleLightbox.min.js"></script>
         <!-- Core theme JS-->
 
-        <script src={% static 'dist/js/scripts.js' %}></script>
+        <script src="{% static 'dist/js/scripts.js' %}"></script>
         <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <!-- * *                               SB Forms JS                               * *-->
         <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
