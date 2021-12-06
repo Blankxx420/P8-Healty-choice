@@ -1,6 +1,6 @@
 from django.db import models
 from .product import Product
-from django.contrib.auth.models import User
+from users.models import User
 
 
 class Substitute(models.Model):

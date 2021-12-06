@@ -21,7 +21,7 @@
     <form method="POST">
       {% csrf_token %}
       <!-- protects form, needed to work -->
-      <fieldset class="form-group">{{ form|crispy }}</fieldset>
+      <fieldset class="form-group">{{ form }}</fieldset>
 
       <button type="submit" class="btn btn-primary">S'inscrire</button>
     </form>
