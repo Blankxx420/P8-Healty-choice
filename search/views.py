@@ -37,6 +37,7 @@ def product(request, product_id):
     product_obj = Product.objects.get(pk=product_id)
     context = {"product": product_obj}
     # except Product.DoesNotExist:
+    print(context)
     return render(request, "search/product.html", context)
 
 
