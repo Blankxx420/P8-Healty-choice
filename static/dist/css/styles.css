@@ -11292,6 +11292,42 @@ body {
 .text-white-75 {
   color: rgba(255, 255, 255, 0.75) !important;
 }
+
+.card-score-A,
+.card-score-B,
+.card-score-C,
+.card-score-D,
+.card-score-E {
+  width: 30px;
+  border-radius: 50%;
+  color: white;
+  font-weight: bold;
+  position: absolute;
+  right: -15px;
+  top: -15px;
+  padding: 5px 10px;
+}
+
+.card-score-A {
+  background-color: #008b50;
+}
+
+.card-score-B {
+  background-color: #a6c858;
+}
+
+.card-score-C {
+  background-color: #fed501;
+}
+
+.card-score-D {
+  background-color: #f28d01;
+}
+
+.card-score-E {
+  background-color: #e73614;
+}
+
 .btn-xl {
   padding: 1.25rem 2.25rem;
   font-size: 0.85rem;

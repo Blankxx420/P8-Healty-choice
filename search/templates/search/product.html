@@ -22,35 +22,34 @@
       <div class="row">
         <div class="col-lg-6 col-md-12">
           <div class="card mx-1 my-3 shadow p-3 mb-5 bg-white rounded">
-          <img src="{{ product.url_image}}" alt=" image produit" >
             {% if product.nutriscore == "A" %}
             <img
               class="card-img-top"
-              src="{% static '/assets/img/nutriscore-A.png' %}"
+              src="{% static 'dist/assets/img/nutriscore-A.png' %}"
               alt="logo nutriscore A"
             />
             {% elif product.nutriscore == "B" %}
             <img
               class="card-img-top"
-              src="{% static '/assets/img/nutriscore-B.png' %}"
+              src="{% static 'dist/assets/img/nutriscore-B.png' %}"
               alt="logo nutriscore B"
             />
             {% elif product.nutriscore == "C" %}
             <img
               class="card-img-top"
-              src="{% static '/assets/img/nutriscore-C.png' %}"
+              src="{% static 'dist/assets/img/nutriscore-C.png' %}"
               alt="logo nutriscore C"
             />
             {% elif product.nutriscore == "D" %}
             <img
               class="card-img-top"
-              src="{% static '/assets/img/nutriscore-D.png' %}"
+              src="{% static 'dist/assets/img/nutriscore-D.png' %}"
               alt="logo nutriscore D"
             />
             {% elif product.nutriscore == "E" %}
             <img
               class="card-img-top"
-              src="{% static '/assets/img/nutriscore-E.png' %}"
+              src="{% static 'dist/assets/img/nutriscore-E.png' %}"
               alt="logo nutriscore E"
             />
             {% endif %}
