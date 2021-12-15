@@ -1,9 +1,12 @@
 from django.db.models import Count
-from django.shortcuts import render
+from django.db import IntegrityError
+from django.shortcuts import render, redirect
 from django.contrib.auth.decorators import login_required
 from search.search_form import Searchbar
 from search.models.product import Product
 from search.models.category import Categories
+from search.models.substitute import Substitute
+from users.models import User
 
 
 def home(request):
@@ -68,7 +71,27 @@ def substitutes(request, product_id):
 
 
 @login_required
-def save_favorite
+def save_favorite(request, product_id, substitute_id):
+    """ save the product and the substitute chosen for the user """
+    product_query = Product.objects.get(pk=product_id)
+    substitute_query = Product.objects.get(pk=substitute_id)
+    user = User.objects.get(pk=request.user.id)
+    favorite = Substitute(product=product_query, substitute=substitute_query, user=user)
+    try:
+        favorite.save()
+        return redirect("search:products")
+    except IntegrityError:
+        return redirect("search:home")
+
+
+@login_required
+def favorites(request):
+    """Display Favorites page of the user"""
+    favorites_prod = Substitute.objects.filter(user_id=request.user.id)
+    context = {
+        "favorites": favorites_prod
+    }
+    return render(request, "search/favorites.html", context)
 
 
 def legal_notice(request):
