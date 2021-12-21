@@ -54,14 +54,14 @@ def substitutes(request, product_id):
     product_query = Product.objects.get(pk=product_id)
 
     # Find the category of the product
-    product_query_cat = Categories.objects.filter(product_id=product_query.id)
+    product_query_cat = Categories.objects.filter(product__id=product_query.id)
 
     # Find 9 products with better nutrition_score in the same category
     substitutes_prod = (
-        Product.objects.filter(categories__in=product_query_cat)
-        .annotate(nb_cat=Count("categories"))
+        Product.objects.filter(category__in=product_query_cat)
+        .annotate(nb_cat=Count("category"))
         .filter(nb_cat__gte=3)
-        .filter(nutriscore__lt=product_query.nutrition_score)
+        .filter(nutrition_score__lt=product_query.nutrition_score)
         .order_by("nutrition_score")[:9]
     )
 
@@ -76,10 +76,10 @@ def save_favorite(request, product_id, substitute_id):
     product_query = Product.objects.get(pk=product_id)
     substitute_query = Product.objects.get(pk=substitute_id)
     user = User.objects.get(pk=request.user.id)
-    favorite = Substitute(product=product_query, substitute=substitute_query, user=user)
+    favorite = Substitute(product_id_id=product_query.id, substitute_id_id=substitute_query.id, user_id_id=user.id)
     try:
         favorite.save()
-        return redirect("search:products")
+        return redirect("search:favorites")
     except IntegrityError:
         return redirect("search:home")
 
