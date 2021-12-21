@@ -8,7 +8,7 @@
                     <div class="col-lg-8 align-self-end">
                         <h1 class="text-white font-weight-bold">Du gras, oui, mais de qualité !</h1>
                         <h2 class="text-white font-weight-bold">Touver un produit de substitution pour ceux que vous consommez tout les jours</h2>
-                        <hr class="divider" />
+                        <hr class="divider"/>
                         <form id="main_form" action="{% url 'search:products' %}" method="POST">
                             {% csrf_token %}
                             {{ searchbar }}

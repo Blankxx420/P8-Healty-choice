@@ -38,7 +38,7 @@
             <a href="{% url 'search:product' product.id %}" target="_blank">
               <p class="card-title">{{ product.name }}</p>
             </a>
-            <a class="btn btn-primary"> Substituer </a>
+            <a href="{% url 'search:substitutes' product.id %}" class="btn btn-primary"> Substituer </a>
           </div>
         </div>
       </div>
