@@ -7,6 +7,10 @@
         <meta name="description" content="" />
         <meta name="author" content="" />
         <title>{% block title %}{% endblock title %}</title>
+        <!-- Fontawsome-->
+        <script
+        src="https://use.fontawesome.com/releases/v5.15.1/js/all.js" crossorigin="anonymous">
+      </script>
         <!-- Favicon-->
         <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
         <!-- Bootstrap Icons-->
@@ -42,26 +46,36 @@
                             </form>
                         </li>
                         <li class="nav-item">
-                            <button type="button" class="btn btn-default btn-sm">
-                                <img src="{% static "dist/assets/img/logo_user.png"%}" alt="logo carrotte" width="40" height="40">
-                            </button>
-                        </li>
-                        <li class="nav-item">
-                            <button type="button" class="btn btn-default btn-sm">
-                            <img src="{% static "dist/assets/img/logo_carrot.png"%}" alt="logo carrotte" width="40" height="40">
-                            </button>
-                        </li>
-                        <li class="nav-item"><a class="nav-link" href="#contact">
-                            <button type="button" class="btn btn-default btn-sm">
-                                <i class="bi bi-box-arrow-in-right" style="font-size: 2em"></i>
-                            </button>
+                         {% if user.is_authenticated %}
+                            <a href="{% url 'account' %}"id="mon_compte"
+                            class="nav-link js-scroll-trigger" title="Mon compte">
+                        <i class="fa-2x fas fa-user-alt"></i>
                         </a>
-                        </li>
-
-                    </ul>
+                        {% else %}
+                      <a href="{% url 'login' %}"
+                        class="nav-link js-scroll-trigger" title="Se connecter">
+                        <i class="fa-2x fas fa-sign-in-alt"></i>
+                      </a>
+                      {% endif %}
+                    </li>
+                    {% if user.is_authenticated %}
+                    <li class="nav-item">
+                      <a href="{% url 'search:favorites' %}"
+                        class="nav-link js-scroll-trigger" title="Mes aliments">
+                        <i class="fa-2x fas fa-carrot"></i>
+                      </a>
+                    </li>
+                    <li class="nav-item">
+                      <a href="{% url 'logout' %}"
+                        class="nav-link js-scroll-trigger" title="Se déconnecter">
+                        <i class="fa-2x fas fa-sign-out-alt"></i
+                      ></a>
+                    </li>
+                    {% endif %}
+                  </ul>
                 </div>
-            </div>
-        </nav>
+              </div>
+            </nav>
     {% endblock nav%}
 
     {% block content %}
@@ -81,10 +95,6 @@
         <!-- Core theme JS-->
 
         <script src="{% static 'dist/js/scripts.js' %}"></script>
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
-        <!-- * *                               SB Forms JS                               * *-->
-        <!-- * * Activate your form at https://startbootstrap.com/solution/contact-forms * *-->
-        <!-- * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * * *-->
         <script src="https://cdn.startbootstrap.com/sb-forms-latest.js"></script>
     </body>
 </html>

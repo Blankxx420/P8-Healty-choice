@@ -12,7 +12,7 @@ class TestViews(TestCase):
             email="user1@gmail.com",
             password="password1234",
         )
-        Product.objects.create(id=713, name="Nutella biscuit", nutrition_score="E")
+        Product.objects.create(id=713, name="Nutella biscuits", nutrition_score="E")
         self.url_home = reverse('search:home')
         self.url_product = reverse('search:product', args=[713])
         self.url_products = reverse('search:products')
@@ -24,7 +24,7 @@ class TestViews(TestCase):
         response = self.client.get(self.url_home)
         self.assertEqual(response.status_code, 200)
         self.assertTemplateUsed(response, 'search/home.html')
-        self.assertEqual(response.context, "searchbar")
+        self.assertContains(response, "product_search")
 
     def test_products_page_POST(self):
         product_search = {"product_search": "input"}
@@ -52,10 +52,10 @@ class TestViews(TestCase):
     def test_save_substitute_as_favorite_success(self):
         self.client.force_login(self.user)
         product = Product.objects.create(
-            name="Oasis framboise", nutriscore="E", barcode="1231231231231"
+            name="Oasis framboise", nutrition_score="E", barcode="1231231231231"
         )
         substitute = Product.objects.create(
-            name="Maytea fraise", nutriscore="C", barcode="7897897897897"
+            name="Maytea fraise", nutrition_score="C", barcode="7897897897897"
         )
         # print(f"product.id: {product.id} / substitute.id: {substitute.id}")
         url = reverse(

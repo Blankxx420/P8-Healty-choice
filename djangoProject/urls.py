@@ -20,8 +20,8 @@ import search.urls
 from users import views as users_views
 
 urlpatterns = [
-    path('', include(search.urls)),
     path('admin/', admin.site.urls),
+    path('', include(search.urls)),
     path("register/", users_views.register, name="register"),
     path("account/", users_views.account, name="account"),
     path(
