@@ -33,4 +33,4 @@ class TestUsersViews(TestCase):
         response = self.client.get(self.account_url)
 
         self.assertEqual(response.status_code, 200)
-        self.assertTemplateUsed(response, "account.html")
+        self.assertTemplateUsed(response, "users/account.html")
