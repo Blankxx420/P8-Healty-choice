@@ -32,7 +32,7 @@
               <p class="card-title">{{ favorite.substitute.name } }</p>
             </a>
             <p>est un substitut pour</p>
-            <a href="{% url 'search:product' favorite.product.id %}" target="_blank">
+            <a href="{% url 'search/product' favorite.product.id %}" target="_blank">
               <p class="card-title">{{ favorite.product.name }}</p>
             </a>
           </div>
@@ -43,7 +43,7 @@
         Vous n'avez pas encore enregistré des substituts en favoris. Une
         recherche en tête ?
         <div class="p-3">
-          <a href="{% url 'search:home' %}" class="btn btn-primary">C'est par ici.</a>
+          <a href="{% url 'search/home' %}" class="btn btn-primary">C'est par ici.</a>
         </div>
       </div>
       {% endif %}
@@ -52,4 +52,3 @@
 </section>
 
 {% endblock content %}
-{% endblock %}
