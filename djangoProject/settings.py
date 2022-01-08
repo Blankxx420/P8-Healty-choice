@@ -61,6 +61,7 @@ MIDDLEWARE = [
 ROOT_URLCONF = 'djangoProject.urls'
 
 AUTH_USER_MODEL = "users.User"
+LOGIN_REDIRECT_URL = "/account/"
 
 TEMPLATES = [
     {
@@ -73,6 +74,7 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'search.context_processors.navigation_search_form',
             ],
         },
     },

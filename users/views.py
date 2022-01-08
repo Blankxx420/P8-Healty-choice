@@ -1,3 +1,4 @@
+from django.contrib import messages
 from django.contrib.auth import login, authenticate
 
 # uses custom form instead of UserCreationForm
@@ -15,8 +16,8 @@ def register(request):
             # Login automatically
             email = form.cleaned_data.get("email")
             raw_password = form.cleaned_data.get("password1")
-            # messages.success(
-            # request, f"Compte créé pour l'adresse email : {email} !")
+            messages.success(
+                request, f"Compte créé pour l'adresse email : {email} !")
             user = authenticate(email=email, password=raw_password)
             login(request, user)
             return redirect("search:home")

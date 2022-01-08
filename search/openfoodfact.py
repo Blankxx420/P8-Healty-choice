@@ -50,6 +50,7 @@ class Openfoodfact:
                 product.get("url"),
                 product.get("image_url"),
                 product.get("image_small_url"),
+                product.get("categories"),
                 product.get("nutriments")
             ):
 

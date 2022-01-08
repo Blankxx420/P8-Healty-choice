@@ -87,7 +87,7 @@ def save_favorite(request, product_id, substitute_id):
 @login_required
 def favorites(request):
     """Display Favorites page of the user"""
-    favorites_prod = Substitute.objects.filter(user_id=request.user.id)
+    favorites_prod = Substitute.objects.filter(user_id_id=request.user.id)
     context = {
         "favorites": favorites_prod
     }
