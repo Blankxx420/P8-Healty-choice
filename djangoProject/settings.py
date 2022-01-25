@@ -95,7 +95,9 @@ DATABASES = {}
 
 if os.getenv("DATABASE_URL"):
     DATABASE_URL = os.getenv("DATABASE_URL")
-    DATABASES["default"] = dj_database_url
+    DATABASES["default"] = dj_database_url.config(
+        default=DATABASE_URL
+    )
 else:
     DATABASES = {
         'default': {
