@@ -1,6 +1,6 @@
 /venv/
 /.idea/
 /htmlcov/
-.env
+djangoProject/.env
 .coverage
 __pycache__/
