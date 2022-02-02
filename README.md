@@ -28,7 +28,7 @@ _If you need to install pipenv : (with pip for Linux) `pip3 install pipenv` (wit
 
 **Clone the repository from Github by running this command:**
 
-`git clone https://github.com/Lamia7/P8_pur_beurre.git`
+`git clone https://github.com/Blankxx420/P8-Healty-choice.git`
 
 **Execute with a virtual environment:**
 Create a virtual environment: `pipenv shell` <br>
